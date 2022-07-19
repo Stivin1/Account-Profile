@@ -1,0 +1,69 @@
+﻿@model OpenSourceEntitys.Models.ModelControllers.Authorization
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/Authorization0.css">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("Index","Authorization")"><i class="fa fa-user" aria-hidden="true"></i>Вход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container">
+        <div class="location">
+            @using (Html.BeginForm("Index", "Authorization", FormMethod.Post))
+            {
+            <div class="location1">
+                <div class="container">
+                    <div class="position-element-label">
+                        @Html.Label("Email", "Адрес электронной почты");
+                    </div>
+                    <div class="position-element-span">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="">
+                        @Html.TextBox("Email", null, new { type = "text" });
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="position-element-label">
+                        @Html.Label("Password", "Пароль");
+                    </div>
+                    <div class="position-element-span">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div class="">
+                        @Html.TextBox("Password", null, new { type = "text" });
+                    </div>
+                </div>
+                <div class="container-submit">
+                    <input type="submit" name="" value="Войти">
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
+
+

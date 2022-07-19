@@ -1,0 +1,150 @@
+.base-container-home{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.base-home-content{
+  width: 1290px;
+  height: 1000px;
+  margin-left: 40px;
+  margin-top: 110px;
+  border-radius: 5px;
+}
+
+.base-home-content-information{
+  width: 1290px;
+  height: 50px;
+  background-color: #333333;
+  padding: 10px;
+}
+
+.base-home-content-information label{
+  font-size: 32px;
+  color: white;
+}
+
+.base-home-content-information-pos{
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.base-home-content-information-pos > label > i{
+  padding-right: 10px;
+}
+
+.base-home-content-information-pos > label > i{
+  padding-right: 10px;
+}
+
+.block-input{
+  margin-left: 10px;
+}
+
+.block-input > div > input{
+  padding: 5px;
+  font-size: 12px;
+  border-width: 1px;
+  width: 200px;
+  border-color: #adadad;
+  background-color: #FFFFFF;
+  color: black;
+  border-style: solid;
+  border-radius: 2px;
+  box-shadow: 0px 0px 7px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+  outline: none;
+}
+
+.block-label-loc{
+  padding-bottom: 8px;
+}
+
+.container-search-inputs{
+  display: flex;
+  margin-top: 40px;
+}
+
+.block-input-sumbit{
+ margin-left: 10px;
+}
+.block-input-sumbit > input{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.container-table-user-search{
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 1290px;
+  height: 783px;
+}
+
+.container-table-user-search > table{
+ padding-top: 10px;
+ border-top: 1px solid black;
+ text-align: center;
+}
+
+.container-table-user-search-main > th{
+  height: 35px;
+}
+
+.container-table-user-search-list > td{
+  padding: 10px 15px 10px 15px;
+  width: 150px;
+  text-align: center;
+font-size: 12px;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+}
+
+.pagination > li a {
+  text-decoration: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+  color: black;
+}
+
+.pagination > li a:hover{
+  text-decoration: none;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+}
+
+#openmessage{
+  text-decoration: none;
+  color: black;
+
+}
+
+#openmessage:hover{
+  border-bottom: 1px solid black;
+}
+
+
+#basket{
+  text-decoration: none;
+  color: black;
+}
+
+#basket:hover{
+  border-bottom: 1px solid black;
+}

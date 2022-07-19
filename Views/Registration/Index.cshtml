@@ -1,0 +1,181 @@
+﻿@model OpenSourceEntitys.Models.ModelControllers.Registration
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/Registration.css">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true">@Html.TextBox("MiddleName",null,new { @type="text" })</i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("Index","Authorization")"><i class="fa fa-user" aria-hidden="true"></i>Вход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container">
+        @using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+        {
+            <div class="Validation" asp-validation-summary="ModelOnly" ></div>
+            <div class="location">
+                <div class="container-participant">
+                    <div class="container-lable-reg">
+                        @Html.Label(null, "Регистрация");
+                    </div>
+                    <div class="container-reg-participant">
+                        <div class="participant">
+                            <div class="potisition-form-element">
+                                <div class="position-element">
+                                    <div class="position-element-label">
+                                        @Html.Label("MiddleName", "Фамилия")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="MiddleName" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        @Html.TextBox("MiddleName", null, new { @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="position-element">
+                                    <div class="position-element-label">
+                                        @Html.Label("Name", "Имя")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="Name" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        @Html.TextBox("Name", null, new { @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="position-element">
+                                    <div class="position-element-label">
+                                        @Html.Label("LastName", "Отчество")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="LastName" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        @Html.TextBox("LastName", null, new { @type = "text" })
+                                    </div>
+                                </div>
+                                <div class="position-element">
+                                    <div class="position-element-label">
+                                        @Html.Label("DateAge", "Дата рождения")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="DateAge" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        <input type="date" name="DateAge" value="">
+                                    </div>
+                                </div>
+                                <div class="position-element">
+                                    <div class="">
+                                        @Html.Label(null, "Страна")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="CountryId" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        <select asp-for="CountryId" asp-items="Model.SelectCountry">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="position-element">
+                                    <div class="">
+                                        @Html.Label(null, "Пол")
+                                    </div>
+                                    <div class="position-element-span">
+                                        <span asp-validation-for="PolId" style="color:red"></span>
+                                    </div>
+                                    <div class="">
+                                        <select asp-for="PolId" asp-items="Model.SelectPol">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-reg-user">
+                            <div class="user">
+                                <div class="potisition-form-element-user">
+                                    <div class="position-element-user-domain">
+                                        <div class="position-element-label">
+                                            @Html.Label("Email", "Почта")
+                                        </div>
+                                        <div class="position-element-span">
+                                            <span asp-validation-for="Email" style="color:red" ></span>
+                                        </div>
+                                        <div class="element-domain">
+                                            @Html.TextBox("Email", null, new { @type = "text" })
+                                            <div class="">
+                                                <select asp-for="DomenId" asp-items="Model.SelectDomen">
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="position-element-user">
+                                        <div class="position-element-label">
+                                            @Html.Label("UserName", "Имя пользователя")
+                                        </div>
+                                        <div class="position-element-span">
+                                            <span asp-validation-for="UserName" style="color:red" ></span>
+                                        </div>
+                                        <div class="">
+                                            @Html.TextBox("UserName", null, new { @type = "text" })
+                                        </div>
+                                    </div>
+                                    <div class="position-element-user">
+                                        <div class="position-element-label">
+                                            @Html.Label("Password", "Пароль")
+                                        </div>
+                                        <div class="position-element-span">
+                                            <span asp-validation-for="Password" style="color:red" ></span>
+                                        </div>
+                                        <div class="">
+                                            @Html.TextBox("Password", null, new { @type = "text" })
+                                        </div>
+                                    </div>
+                                         <div class="position-element-span">
+                                             <span asp-validation-for="ConsentProvisionPersonalData" style="color:red">
+                                             </span>
+                                         </div>
+                                    </div>
+                                    <div class="element-сonfirmation">
+                                        <p>
+                                            Подтвердите согласие на обработку ваших персональных данныех
+                                        </p>
+                                    </div>
+                                    <div class="сonfirmation-checkbox">
+                                        @Html.CheckBox("ConsentProvisionPersonalData",null)
+                                    </div>
+                                    <div class="position-element-user">
+                                        <div class="position-element-user-submit">
+                                            <input type="submit" name="" value="Зарегистрировать">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        }
+    </div>
+</body>
+</html>
+

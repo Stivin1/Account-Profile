@@ -1,0 +1,65 @@
+
+.base-container{
+  background-color: #17191C;
+  width: 100%;
+  min-height: 100%;
+}
+
+.location{
+  display: inline-block;
+  margin-top: 280px;
+  width: 350px;
+  height: 500px;
+  margin-left: 660px;
+  background-color: #17191C;
+}
+
+.container{
+  margin-top: 10px;
+}
+
+.position-element-label{
+  margin-bottom: 5px;
+}
+
+.position-element-span{
+  margin-bottom: 5px;
+}
+
+.container > div > label{
+  color: white;
+}
+
+.container > div > span{
+  margin-left: -2px;
+  color: red;
+  background-color: #17191C;
+}
+
+.container > div > input{
+  padding: 3px;
+  padding-bottom: 4px;
+  outline: none;
+  cursor: pointer;
+  width: 300px;
+  background-color: #17191C;
+  border: 0px;
+  color: white;
+  border-bottom: 1px solid red;
+}
+
+.container-submit{
+  margin-top: 20px;
+}
+
+.container-submit > input{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  padding-left: 130px;
+  padding-right: 130px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+  margin-top: 10px;
+}

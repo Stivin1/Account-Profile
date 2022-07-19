@@ -1,0 +1,89 @@
+﻿
+@model OpenSourceEntitys.Models.ModelControllers.Front
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/Front.css">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("Index","Authorization")"><i class="fa fa-user" aria-hidden="true"></i>Вход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container">
+        <div class="location">
+            <div class="container-information">
+                <div class="information">
+                    <label for="">Добро пожаловать в OpenSource</label>
+                </div>
+                <div class="information-p">
+                    @{ 
+                        <div class="information-p1">
+                            @if(Model.ParticipantCount == 0)
+                            {
+                                <label for="">Количество пользователей: 0</label>
+                            }
+                            else
+                            {
+                        <label for="">Количество пользователей: @Model.ParticipantCount</label>
+                            }
+                        </div>
+                        <div class="information-p2">
+                            @if (Model.GroupCount == 0)
+                            {
+                                <label for="">Группы: 0</label>
+                            }
+                            else
+                            {
+                                <label for="">Группы: @Model.GroupCount</label>
+                            }
+                        </div>
+                     }
+                </div>
+            </div>
+            <div class="container-reg">
+                <div class="container-reg-email">
+                    @using (Html.BeginForm("Index", "Front", FormMethod.Post))
+                    {
+                        <div class="Validation" asp-validation-summary="ModelOnly"></div>
+                        <div class="container-lable-1">
+                            @Html.Label("Email", "Укажите адрес электронной почты")
+                        </div>
+                        <div class="container-input-nav">
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="container-input-email">
+                            @Html.TextBox("Email", null, new { type = "text" })
+                        </div>
+                        <div class="container-submit-email">
+                            <input type="submit" name="" value="Зарегистрировать">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

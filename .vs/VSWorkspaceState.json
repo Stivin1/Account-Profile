@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Models",
+    "\\Models\\EntityConfiguration",
+    "\\Models\\EntityConfiguration\\EntitySystem",
+    "\\Models\\EntityConfiguration\\EntitySystem\\ApplicationContext",
+    "\\Models\\EntityConfiguration\\EntitySystem\\Entitys",
+    "\\wwwroot",
+    "\\wwwroot\\js",
+    "\\wwwroot\\lib"
+  ],
+  "SelectedNode": "\\Models\\EntityConfiguration\\EntitySystem\\Entitys\\User.cs",
+  "PreviewInSolutionExplorer": true
+}

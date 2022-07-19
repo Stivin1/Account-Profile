@@ -1,0 +1,201 @@
+.base-container-home{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.base-home-content{
+  width: 1290px;
+  height: 1000px;
+  margin-left: 40px;
+  margin-top: 110px;
+  border-radius: 5px;
+}
+
+.base-home-content-information{
+  width: 1290px;
+  height: 50px;
+  background-color: #333333;
+  padding: 10px;
+}
+
+.base-home-content-information label{
+  font-size: 32px;
+  color: white;
+}
+
+.base-home-content-information-pos{
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.base-home-content-information-pos > label > i{
+  padding-right: 10px;
+}
+
+.base-block-appendgroups{
+  display: inline-block;
+  width: 1290px;
+  height: 930px;
+}
+
+.base-block-appendgroups-con-pos{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.base-block-position-label{
+  margin-bottom: 5px;
+}
+
+.base-block-position-nav{
+  margin-bottom: 5px;
+  color: red;
+}
+
+.base-block-position-input{
+  margin-bottom: 5px;
+  color: red;
+}
+
+.base-block-appendgroups-positflex{
+  margin-right: 20px;
+}
+
+.base-block-appendgroups-position{
+  display: flex;
+}
+
+.block-submit-a{
+ margin-top: 20px;
+}
+
+.block-submit-a > a{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.base-block-appendgroups-positflex > select{
+  margin-left: -10px;
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  width: 90px;
+  border-radius: 2px solid black;
+}
+
+.container-doc-location > div > div input{
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  width: 230px;
+  border-radius: 5px;
+}
+
+
+.container-table-file-search{
+  margin-top: 50px;
+  margin-left: 100px;
+  width: 1290px;
+  height: 783px;
+}
+
+.container-table-file-search > table{
+  padding-top: 10px;
+ border-top: 1px solid black;
+}
+
+.container-table-file-search-main > th{
+  padding: 10px 25px 10px 25px;
+}
+
+.container-table-file-search-list > td{
+  padding: 10px 15px 10px 15px;
+  width: 150px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.container-table-file-search-list > td > a{
+  color: black;
+  margin-left: 43px;
+  text-decoration: none;
+  white-space:nowrap;
+}
+
+.bloc-doc-create{
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.bloc-doc-create > input{
+color: white;
+padding: 10px;
+border-radius: 3px;
+padding-left: 50px;
+padding-right: 50px;
+background-color: #5C9A18;
+border: 1px solid #5C9A18;
+cursor: pointer;
+margin-top: 10px;
+}
+
+#docopen{
+  margin-left: 2px;
+}
+
+#doctime{
+  margin-left: 0px;
+  white-space:nowrap;
+}
+
+#doctype{
+  margin-left: 7px;
+}
+
+#docstate{
+  margin-left: 40px;
+}
+#td-icon {
+ font-size: 26px;
+ margin-left: 0px;
+}
+
+#td-w-icon{
+  width: 25px;
+}
+
+.container-table-file-search-list > td > a:hover{
+  border-bottom: 1px solid black;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+}
+
+
+.pagination > li a {
+  text-decoration: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+  color: black;
+}
+
+.pagination > li a:hover{
+  text-decoration: none;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+}

@@ -1,0 +1,219 @@
+
+.base-container{
+  min-height: 100%;
+  background-color: #17191C;
+}
+
+.location{
+  margin-top: 100px;
+  display: inline-flex;
+}
+
+.container-participant{
+  width: 1565px;
+  height: 720px;
+  margin-left: 27px;
+  background-color: black;
+  background-color: #202226;
+  border: 0.1px solid #333333;
+}
+
+.container-lable-reg{
+  margin-top: 20px;
+  padding-left: 100px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #333333;
+}
+
+.container-lable-reg label{
+  color: white;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.container-reg-participant{
+  width: 1565px;
+  height: 650px;
+  display: flex;
+}
+
+.participant{
+  width: 500px;
+  height: 500px;
+}
+
+.potisition-form-element{
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.position-element{
+  padding-bottom: 20px;
+}
+
+.position-element label{
+  color: white;
+}
+
+.position-element-label{
+  margin-bottom: 5px;
+}
+
+.position-element-span{
+  margin-bottom: 5px;
+  margin-left: 2px;
+}
+
+.position-element span{
+  margin-left: -2px;
+  color: red;
+}
+
+.participant > .position-element {
+  margin-left: 50px;
+}
+
+.position-element > div > input{
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  width: 300px;
+  border-radius: 2px solid black;
+}
+
+.container-reg-user{
+  width: 500px;
+  height: 500px;
+}
+
+.user{
+  width: 500px;
+  height: 500px;
+}
+
+.potisition-form-element-user{
+  margin-top: 50px;
+}
+
+.position-element-user {
+  margin-bottom: 10px;
+}
+
+.position-element-user-domain{
+ margin-bottom: 10px;
+}
+
+.position-element-user-domain > div.element-domain > input{
+  margin-left: -10px;
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  width: 238px;
+  border-radius: 2px solid black;
+}
+
+.position-element-user-domain label{
+  color: white;
+}
+
+.element-domain{
+  display: flex;
+  margin-left: 10px;
+}
+
+.element-domain select{
+ padding: 3px;
+ outline: none;
+ cursor: pointer;
+}
+
+.position-element select
+{
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.position-element-user label{
+ color: white;
+}
+
+.position-element-user > div >  input{
+  padding: 3px;
+  outline: none;
+  cursor: pointer;
+  width: 300px;
+  border-radius: 2px solid black;
+}
+
+.position-element-user > .position-element-user-submit input{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.position-element-user , .element-сonfirmation p{
+  color: white;
+}
+
+.сonfirmation-checkbox{
+  margin-top: 10px;
+}
+
+.сonfirmation-checkbox > input{
+  cursor: pointer;
+}
+
+.сonfirmation-error{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.сonfirmation-error span{
+  padding-top: 12px;
+  position: relative;
+  border-radius: 5px;
+  border-bottom: 2px solid #333333;
+  padding-left:30px;
+  color: red;
+}
+
+.position-element-span > span{
+  color: red;
+}
+
+.сonfirmation-error > span > i{
+  margin-top: 10px;
+  position: absolute;
+  left: 5px;
+  font-size: 20px;
+}
+
+/*
+.container-information{
+  width: 700px;
+  height: 700px;
+  margin-left: 50px;
+  background-color: #212327;
+  border-radius: 3px;
+  border: 0.1px solid #333333;
+  box-shadow: 5px 5px #111815;
+}
+
+.container-input-reg-email{
+  width: 700px;
+  height: 700px;
+  margin-left: 50px;
+  background-color: #212327;
+  border-radius: 3px;
+  border: 0.1px solid #333333;
+  box-shadow: 5px 5px #111815;
+}
+
+*/

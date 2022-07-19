@@ -1,0 +1,135 @@
+
+.base-container-home{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.base-home-content{
+  width: 1290px;
+  height: 1000px;
+  margin-left: 40px;
+  margin-top: 110px;
+  border-radius: 5px;
+}
+
+.base-home-content-information{
+  width: 1290px;
+  height: 50px;
+  background-color: #333333;
+  padding: 10px;
+}
+
+.base-home-content-information label{
+  font-size: 32px;
+  color: white;
+}
+
+.base-home-content-information-pos{
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.base-home-content-information-pos > label > i{
+  padding-right: 10px;
+}
+
+
+.base-home-container-info{
+  display: flex;
+}
+
+.container-part{
+  width: 500px;
+  height: 930px;
+}
+
+.container-user{
+  width: 500px;
+  height: 930px;
+}
+
+.locatiion-block-part{
+  margin-top: 80px;
+  margin-left: 70px;
+}
+
+.container-part-location div{
+  margin-bottom: 10px;
+}
+
+.locatiion-block-user{
+  margin-top: 80px;
+  margin-left: 0px;
+}
+
+.container-user-location div{
+  margin-bottom: 10px;
+}
+
+.container-part-location > div > input{
+     padding: 5px;
+     font-size: 12px;
+     border-width: 1px;
+     width: 200px;
+     border-color: #adadad;
+     background-color: #FFFFFF;
+     color: black;
+     border-style: solid;
+     border-radius: 2px;
+     box-shadow: 0px 0px 7px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+     outline: none;
+}
+
+.container-user-location > div >input{
+  padding: 5px;
+  font-size: 12px;
+  border-width: 1px;
+  width: 200px;
+  border-color: #adadad;
+  background-color: #FFFFFF;
+  color: black;
+  border-style: solid;
+  border-radius: 2px;
+  box-shadow: 0px 0px 7px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+  outline: none;
+}
+
+
+.block-report {
+    width: 630px;
+    height: 100px;
+    margin-left: 70px;
+}
+
+.block-element {
+    margin-top: 40px;
+}
+
+.block-report-information {
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.block-report-el-pos {
+    margin-bottom: 10px;
+}
+
+    .block-report-el-pos a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .block-report-el-pos a:hover {
+            text-decoration: underline;
+        }
+
+/*
+padding: 3px;
+outline: none;
+cursor: pointer;
+width: 300px;
+border-radius: 2px solid black;
+*/

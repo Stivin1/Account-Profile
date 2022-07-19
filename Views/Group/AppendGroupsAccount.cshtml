@@ -1,0 +1,190 @@
+﻿@model OpenSourceEntitys.Models.ModelControllers.AppendGroupAccount
+
+@{
+    ViewData["Title"] = "AppendGroupsAccount";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/HomeFrontMenu.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <link rel="stylesheet" href="~/css/AppendGroupsAccount.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+        <ul>
+            <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+        </ul>
+        <ul class="pos">
+            <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+            <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+            <li><a href="@Url.Action("Index", "Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+            <li><a href="@Url.Action("OutAccount", "Home",new { UserId = @Model.UserId })"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+            <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+        </ul>
+        </nav>
+    </div>
+    <div class="base-container-home">
+        <div class="base-home-menu">
+            <nav>
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+                    <li><a href="@Url.Action("Index","ListUser",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+                    <li><a href="@Url.Action("UpdateProfile","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+                    <li><a href="@Url.Action("UpdateAccount","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+                    <li><a href="@Url.Action("UpdatePassword","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить пароль</a></li>
+                    <li><a href="@Url.Action("","",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+                    <li><a href="@Url.Action("AppendGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+                    <li><a href="@Url.Action("AppendGroupsAccount","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+                    <li><a href="@Url.Action("AppendRole","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+                    <li><a href="@Url.Action("AppendRoleAccount","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+                    <li><a href="@Url.Action("Index","Document",new { UserId = @Model.UserId })"><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+                    <li><a href="@Url.Action("DocumentDeleted","Document",new { UserId = @Model.UserId })"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageForUsers","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+                            <div id="mail">@Model.HelpersDisplayCountMessage</div>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Message",new { UserId = @Model.UserId })"><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageDeleted","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+                            <div id="mail">@Model.HelpersDeletedCountMessage</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="base-home-content">
+            <div class="base-home-content-information">
+                <div class="base-home-content-information-pos">
+                    <label for=""><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</label>
+                </div>
+            </div>
+            <div class="container-list-append-groups">
+                <div class="container-position-append-groups">
+                    <div class="information-list-append-lable">
+                        <label for="">Список добавленных групп</label>
+                    </div>
+                    <div class="container-tableuse-append-groups">
+                        <table class="container-list-append-table">
+                            <tr>
+                                <th>Наименование группы</th>
+                                <th>Удалить группу</th>
+                            </tr>
+                            @foreach (var listusertgroups in Model.UserListGroups)
+                            {
+                                <tr class="container-table-grooups-append-list">
+                                    <td>@listusertgroups.Name</td>
+                                    <td>
+                                        @using (Html.BeginForm("AppendGroupsAccount", "Group", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("UserId", Model.UserId)
+                                            @Html.Hidden("UserGroups", @listusertgroups.Name)
+                                            @Html.Hidden("Operation", 2)
+                                            <input type="submit" value="Удалить">
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                            </table>
+                        <ul class="pagination">
+                            @{
+                                <li>
+                                    <a asp-route-menuuserpage="@(Model.ListGroupsUsersPagination.CurrentPage > 0 ? Model.ListGroupsUsersPagination.CurrentPage - 1 : 0)"
+                                       asp-route-UserId="@Model.UserId">«</a>
+                                </li>
+                                for (int i = 1; i < Model.ListGroupsUsersPagination.TotalPage + 1; i++)
+                                {
+                                    if (Model.ListGroupsUsersPagination.After)
+                                    {
+                                        <li>
+                                            <a asp-route-menuuserpage="@(@i)"
+                                               asp-route-UserId="@Model.UserId">@i</a>
+                                        </li>
+                                    }
+                                    else
+                                    if (Model.ListGroupsUsersPagination.Bofore)
+                                    {
+                                        <li>
+                                            <a asp-route-menuuserpage="@(@i)"
+                                               asp-route-UserId="@Model.UserId">@i</a>
+                                        </li>
+                                    }
+                                }
+                                <li>
+                                    <a asp-route-menuuserpage="@(Model.ListGroupsUsersPagination.CurrentPage < Model.ListGroupsUsersPagination.TotalPage ?  Model.ListGroupsUsersPagination.CurrentPage + 1 : Model.ListGroupsUsersPagination.TotalPage)"
+                                       asp-route-UserId="@Model.UserId">»</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-table-grooups-search">
+                <table>
+                    <tr class="container-table-grooups-search-main">
+                        <th>Наименование группы</th>
+                        <th>Добавить группу</th>
+                    </tr>
+                    @{
+                        @foreach (var list in Model.Groups)
+                        {
+                            <tr class="container-table-grooups-search-list">
+                                <td>@list.Name</td>
+                                <td>
+                                    @using (Html.BeginForm("AppendGroupsAccount", "Group", FormMethod.Post))
+                                    {
+                                        @Html.Hidden("UserId", Model.UserId)
+                                        @Html.Hidden("UserGroups", list.Name)
+                                        @Html.Hidden("Operation", 1)
+                                        <input type="submit" value="Добавить">
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+                <ul class="pagination">
+                    @{
+                        <li>
+                            <a asp-route-menupage="@(Model.ListGroupsPagination.CurrentPage > 0 ?  Model.ListGroupsPagination.CurrentPage - 1 : 0)"
+                               asp-route-UserId="@Model.UserId">«</a>
+                        </li>
+                        for (int i = 1; i < Model.ListGroupsPagination.TotalPage + 1; i++)
+                        {
+                            if (Model.ListGroupsPagination.After)
+                            {
+                                <li>
+                                    <a asp-route-menupage="@(@i)"
+                                       asp-route-UserId="@Model.UserId">@i</a>
+                                </li>
+                            }
+                            else
+                            if (Model.ListGroupsPagination.Bofore)
+                            {
+                                <li>
+                                    <a asp-route-menupage="@(@i)"
+                                       asp-route-UserId="@Model.UserId">@i</a>
+                                </li>
+                            }
+                        }
+                        <li>
+                            <a asp-route-menupage="@(Model.ListGroupsPagination.CurrentPage < Model.ListGroupsPagination.TotalPage ?  Model.ListGroupsPagination.CurrentPage + 1 : Model.ListGroupsPagination.TotalPage)"
+                               asp-route-UserId="@Model.UserId">»</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

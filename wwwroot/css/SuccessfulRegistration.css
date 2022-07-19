@@ -1,0 +1,37 @@
+
+.base-container{
+  min-height: 100%;
+  background-color: #17191C;
+}
+
+.location{
+  margin-top: 100px;
+  display: inline-block;
+  width: 1475px;
+  height: 700px;
+  margin-left: 27px;
+  background-color: black;
+  background-color: #202226;
+  border: 0.1px solid #333333;
+}
+
+
+.container-ok{
+  margin-top: 150px;
+  margin-left: 90px;
+  font-size: 24px;
+  color: white;
+}
+
+.container-ok p{
+  font-size: 16px;
+}
+
+.container-ok p > a{
+  color: white;
+  text-decoration: none;
+}
+
+.container-ok p > a:hover{
+  text-decoration: underline;
+}

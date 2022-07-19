@@ -1,0 +1,192 @@
+﻿
+@model OpenSourceEntitys.Models.ModelControllers.Home
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/HomeFrontMenu.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <link rel="stylesheet" href="~/css/Home.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.ActionLink("OutAccount","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container-home">
+        <div class="base-home-menu">
+            <nav class="">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+                    <li><a href="@Url.Action("Index","ListUser",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+                    <li><a href="@Url.Action("UpdateProfile","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+                    <li><a href="@Url.Action("UpdateAccount","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+                    <li><a href="@Url.Action("UpdatePassword","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить пароль</a></li>
+                    <li><a href="@Url.Action("ListUsersGroups","Group",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+                    <li><a href="@Url.Action("AppendGroups","Group",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+                    <li><a href="@Url.Action("AppendGroupsAccount","Group",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+                    <li><a href="@Url.Action("AppendRole","Role",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+                    <li><a href="@Url.Action("AppendRoleAccount","Role",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+                    <li><a href="@Url.Action("Index","Document",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+                    <li><a href="@Url.Action("DocumentDeleted","Document",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageForUsers","Message",new { UserId = @Model.ConfigRootCore.UserCore.Id })">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+                            <div id="mail">@Model.HelpersDisplayCountMessage</div>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Message",new { UserId = @Model.ConfigRootCore.UserCore.Id })"><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageDeleted","Message",new { UserId = @Model.ConfigRootCore.UserCore.Id })">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+                            <div id="mail">@Model.HelpersDeletedCountMessage</div>
+                        </a>
+                    </li>
+                   </ul>
+            </nav>
+        </div>
+        <div class="base-home-content">
+            <div class="base-home-content-information">
+                <div class="base-home-content-information-pos">
+                    <label for=""><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</label>
+                </div>
+            </div>
+            <div class="base-home-container-info">
+                <div class="base-home-container-info-part">
+                    <div class="container-part">
+                        <div class="locatiion-block-part">
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Фамилия")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("MiddleName", Model.ConfigRootCore.ParticipantCore.MiddleName, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Имя")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("Name", Model.ConfigRootCore.ParticipantCore.Name, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Отчество")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("LastName", Model.ConfigRootCore.ParticipantCore.LastName, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Дата рождения")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("DateAge", Model.ConfigRootCore.ParticipantCore.DateAge, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Пол")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("Name", Model.ConfigRootCore.ParticipantCore.Pol.Name, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-part-location">
+                                <div class="">
+                                    @Html.Label(null, "Страна")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("Name", Model.ConfigRootCore.UserCore.Country.Name, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-report">
+                            <div class="block-element">
+                                <div class="block-report-information">
+                                    <label for="">Отчеты</label>
+                                </div>
+                                <div class="block-report-el-pos">
+                                    <a href="@Url.Action("UserDownload","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })">Изменения данных пользователя</a>
+                                </div>
+                                <div class="block-report-el-pos">
+                                    <a href="@Url.Action("ProfileDownload","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })">Изменения данных профиля</a>
+                                </div>
+                                <div class="block-report-el-pos">
+                                    <a href="@Url.Action("ActiveDownload","Home",new { UserId = @Model.ConfigRootCore.UserCore.Id })">Активность аккаунта</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="base-home-container-info-user">
+                    <div class="container-user">
+                        <div class="locatiion-block-user">
+                            <div class="container-user-location">
+                                <div class="">
+                                    @Html.Label(null, "Почта")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("Email", Model.ConfigRootCore.UserCore.Email, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-user-location">
+                                <div class="">
+                                    @Html.Label(null, "Имя пользователя")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("UserName", Model.ConfigRootCore.UserCore.UserName, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-user-location">
+                                <div class="">
+                                    @Html.Label(null, "Дата создания аккаунта")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("DateCreate", Model.ConfigRootCore.UserCore.DateCreate, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-user-location">
+                                <div class="">
+                                    @Html.Label(null, "Дата изменения аккаунта")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("DateChanges", Model.ConfigRootCore.UserCore.DateChanges, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="container-user-location">
+                                <div class="">
+                                    @Html.Label(null, "Дата последнего входа")
+                                </div>
+                                <div class="">
+                                    @Html.TextBox("DateLastEntry", Model.ConfigRootCore.UserCore.DateLastEntry, new { @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

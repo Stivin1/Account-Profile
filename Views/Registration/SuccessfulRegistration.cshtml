@@ -1,0 +1,38 @@
+﻿
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/SuccessfulRegistration.css">
+    <link rel="stylesheet" href="~/css/FrontMenu.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true">@Html.TextBox("MiddleName", null, new { @type = "text" })</i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("Index","Authorization")"><i class="fa fa-user" aria-hidden="true"></i>Вход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container">
+        <div class="location">
+            <div class="container-ok">
+                <p>
+                    Регистрация прошла успешно, перейдите по ссылке для входа в <a href="#">личный кабинет</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

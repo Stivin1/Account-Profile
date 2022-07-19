@@ -1,0 +1,185 @@
+﻿
+@model OpenSourceEntitys.Models.ModelControllers.DocumentDeleted
+
+@{
+    ViewData["Title"] = "DocumentDeleted";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/HomeFrontMenu.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <link rel="stylesheet" href="~/css/DocumentDeleted.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index", "Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("OutAccount", "Home",new { UserId = @Model.UserId })"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+                <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container-home">
+        <div class="base-home-menu">
+            <nav class="">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+                    <li><a href="@Url.Action("Index","ListUser",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+                    <li><a href="@Url.Action("UpdateProfile","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+                    <li><a href="@Url.Action("UpdateAccount","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+                    <li><a href="@Url.Action("UpdatePassword","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить пароль</a></li>
+                    <li><a href="@Url.Action("ListUsersGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+                    <li><a href="@Url.Action("AppendGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+                    <li><a href="@Url.Action("AppendGroupsAccount","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+                    <li><a href="@Url.Action("AppendRole","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+                    <li><a href="@Url.Action("AppendRoleAccount","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+                    <li><a href="@Url.Action("Index","Document",new { UserId = @Model.UserId })"><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+                    <li><a href="@Url.Action("DocumentDeleted","Document",new { UserId = @Model.UserId })"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageForUsers","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+                            <div id="mail">@Model.HelpersDisplayCountMessage</div>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Message",new { UserId = @Model.UserId })"><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageDeleted","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+                            <div id="mail">@Model.HelpersDeletedCountMessage</div>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+        <div class="base-home-content">
+            <div class="base-home-content-information">
+                <div class="base-home-content-information-pos">
+                    <label for=""><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</label>
+                </div>
+            </div>
+            <div class="base-block-appendgroups">
+                @using (Html.BeginForm("DocumentDeleted", "Document", FormMethod.Get))
+                {
+                    @Html.Hidden("UserId",Model.UserId)
+                    <div class="base-block-appendgroups-con-pos">
+                        <div class="base-block-appendgroups-position container-doc-location">
+                            <div class="base-block-appendgroups-positflex">
+                                <div class="base-block-position-label">
+                                    @Html.Label("Name", "Наименование документа")
+                                </div>
+                                <div class="base-block-position-input">
+                                    @Html.TextBox("Name", null, new { @type = "text" })
+                                </div>
+                            </div>
+                            <div class="base-block-appendgroups-positflex">
+                                <div class="base-block-position-label">
+                                    @Html.Label("DateDeleted", "Дата удаления документа")
+                                </div>
+                                <div class="base-block-position-input">
+                                    @Html.TextBox("DateDeleted", null, new { @type = "text" })
+                                </div>
+                            </div>
+                            <div class="base-block-appendgroups-positflex">
+                                <div class="base-block-position-label">
+                                    @Html.Label(null, "Тип файла")
+                                </div>
+                                <select asp-for="DocumentTypesId" asp-items="Model.DocumentTypes"></select>
+                            </div>
+                        </div>
+                        <div class="block-submit">
+                            <input type="submit" name="" value="Поиск">
+                        </div>
+                    </div>
+                }
+                <div class="container-table-file-search">
+                    <table>
+                        @{ 
+                                                <tr class="container-table-file-search-main">
+                                                    <th>Файл</th>
+                                                    <th>Наименование документа</th>
+                                                    <th>Дата удаления документа</th>
+                                                    <th>Тип файла</th>
+                                                    <th>Открыть документ</th>
+                                                    <th>Восстановить</th>
+                                                </tr>
+                            @foreach (var doc in Model.Documents)
+                            {
+                    <tr class="container-table-file-search-list">
+                        <td id="td-w-icon"><i id="td-icon" class="fa fa-file-o" aria-hidden="true"></i></td>
+                        <td>@doc.Name</td>
+                        <td><div id="doctime">@doc.DateDeleted</div></td>
+                        <td><div id="doctype">@doc.DocumentType.NameType</div></td>
+                        <td><a href="@Url.Action("Download","Document",new { DocumentId = doc.id })">Открыть</a></td>
+                        <td>
+                            @using (Html.BeginForm("DocumentRecover", "Document", FormMethod.Post))
+                            {
+                                @Html.Hidden("UserId", @doc.UserId)
+                                @Html.Hidden("DocumentId", @doc.id)
+                                <input id="recover" type="submit" value="Восстановить">
+                            }
+                        </td>
+                    </tr>
+                             }
+                          }
+                    </table>
+                    <ul class="pagination">
+                        @{
+                            <li>
+                                <a asp-route-page="@(Model.ListUserDeletedDocumentPagination.CurrentPage > 0 ?  Model.ListUserDeletedDocumentPagination.CurrentPage - 1 : 0)"
+                                   asp-route-Sorting="@Model.ListUserDeletedDocumentSorting.Default"
+                                   asp-route-Middlename="@Model.Name"
+                                   asp-route-Name="@Model.DateDeleted"
+                                   asp-route-UserId="@Model.UserId">«</a>
+                            </li>
+                            for (int i = 1; i < Model.ListUserDeletedDocumentPagination.TotalPage + 1; i++)
+                            {
+                                if (Model.ListUserDeletedDocumentPagination.After)
+                                {
+                                    <li>
+                                        <a asp-route-page="@(@i)"
+                                           asp-route-Sorting="@Model.ListUserDeletedDocumentSorting.Default"
+                                           asp-route-Middlename="@Model.Name"
+                                           asp-route-Name="@Model.DateDeleted"
+                                           asp-route-UserId="@Model.UserId">@i</a>
+                                    </li>
+                                }
+                                else
+                                if (Model.ListUserDeletedDocumentPagination.Bofore)
+                                {
+                                    <li>
+                                        <a asp-route-page="@(@i)"
+                                           asp-route-Sorting="@Model.ListUserDeletedDocumentSorting.Default"
+                                           asp-route-Middlename="@Model.Name"
+                                           asp-route-Name="@Model.DateDeleted"
+                                           asp-route-UserId="@Model.UserId">@i</a>
+                                    </li>
+                                }
+                            }
+                            <li>
+                                <a asp-route-page="@(Model.ListUserDeletedDocumentPagination.CurrentPage < Model.ListUserDeletedDocumentPagination.TotalPage ?  Model.ListUserDeletedDocumentPagination.CurrentPage + 1 : Model.ListUserDeletedDocumentPagination.TotalPage)"
+                                   asp-route-Sorting="@Model.ListUserDeletedDocumentSorting.Default"
+                                   asp-route-Middlename="@Model.Name"
+                                   asp-route-Name="@Model.DateDeleted"
+                                   asp-route-UserId="@Model.UserId">»</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,142 @@
+/*
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="C:\Users\програм\AppData\Local\atom\save\Network 9\font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="C:\Users\програм\AppData\Local\atom\save\Network 9\main.css">
+    <link rel="stylesheet" href="C:\Users\програм\AppData\Local\atom\save\Network 9\HomeFrontMenu.css">
+    <link rel="stylesheet" href="C:\Users\програм\AppData\Local\atom\save\Network 9\HomeMenu.css">
+    <link rel="stylesheet" href="C:\Users\програм\AppData\Local\atom\save\Network 9\Home.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="list-navigation">
+      <nav>
+        <ul>
+          <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+        </ul>
+        <ul class="pos">
+          <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+          <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+          <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+          <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+          <li><a href="#"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="base-container-home">
+      <div class="base-home-menu">
+        <nav class="">
+        <ul>
+          <li><a href><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+          <li><a href><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+          <li><a href><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+          <li><a href><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+          <li><a href><i class="fa fa-list-alt" aria-hidden="true"></i>Сменить пароль</a></li>
+          <li><a href><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+          <li><a href><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+          <li><a href><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+          <li><a href><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+          <li><a href><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+          <li><a href><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+          <li><a href><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+          <li><a href><i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+            <div id="mail">0</div>
+          </a></li>
+          <li><a href><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+          <li><a href><i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+            <div id="mail">0</div>
+          </a></li>
+          <li><a href><i class="fa fa-low-vision" aria-hidden="true"></i>Активность аккаунта</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="base-home-content">
+        <div class="base-home-content-information">
+          <div class="base-home-content-information-pos">
+            <label for=""><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+.base-container-home{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.base-home-content{
+  width: 1290px;
+  height: 1000px;
+  margin-left: 40px;
+  margin-top: 110px;
+  border-radius: 5px;
+  border: 2px solid #606066;
+}
+
+
+.base-home-content-information{
+  width: 1290px;
+  height: 50px;
+  border-bottom: 2px solid #606066;
+}
+
+.base-home-content-information label{
+  font-size: 32px;
+}
+
+.base-home-content-information-pos{
+  margin-left: 30px;
+  margin-top: 18px;
+}
+
+.base-home-content-information-pos > label > i{
+  padding-right: 10px;
+}
+
+.base-block-update-account{
+  width: 1290px;
+  height: 930px;
+  background-color: red;
+}
+
+.base-block-update-account{
+  display: inline-block;
+  width: 1290px;
+  height: 930px;
+}
+
+.base-block-update-account-con-pos{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.base-block-position-label{
+  margin-bottom: 5px;
+}
+
+.base-block-position-nav{
+  margin-bottom: 5px;
+  color: red;
+}
+
+.base-block-position-input{
+  margin-bottom: 5px;
+  color: red;
+}
+
+.block-submit > input{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+*/

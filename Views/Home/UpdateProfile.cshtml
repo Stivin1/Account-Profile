@@ -1,0 +1,153 @@
+﻿
+@model OpenSourceEntitys.Models.ModelControllers.UpdateProfile
+
+@{
+    ViewData["Title"] = "UpdateProfile";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/HomeFrontMenu.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <link rel="stylesheet" href="~/css/UpdateProfile.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index","Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("OutAccount", "Home",new { UserId = @Model.UserId })"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+                <li><a href="@Url.Action("Index","Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container-home">
+        <div class="base-home-menu">
+            <nav class="">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+                    <li><a href="@Url.Action("Index","ListUser",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+                    <li><a href="@Url.Action("UpdateProfile","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+                    <li><a href="@Url.Action("UpdateAccount","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+                    <li><a href="@Url.Action("UpdatePassword","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить пароль</a></li>
+                    <li><a href="@Url.Action("ListUsersGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+                    <li><a href="@Url.Action("AppendGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+                    <li><a href="@Url.Action("AppendGroupsAccount","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+                    <li><a href="@Url.Action("AppendRole","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+                    <li><a href="@Url.Action("AppendRoleAccount","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+                    <li><a href="@Url.Action("Index","Document",new { UserId = @Model.UserId })"><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+                    <li><a href="@Url.Action("DocumentDeleted","Document",new { UserId = @Model.UserId })"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageForUsers","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+                            <div id="mail">@Model.HelpersDisplayCountMessage</div>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Message",new { UserId = @Model.UserId })"><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageDeleted","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+                            <div id="mail">@Model.HelpersDeletedCountMessage</div>
+                        </a>
+                    </li>
+                    </ul>
+            </nav>
+        </div>
+        <div class="base-home-content">
+            <div class="base-home-content-information">
+                <div class="base-home-content-information-pos">
+                    <label for=""><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</label>
+                </div>
+            </div>
+            <div class="base-block-update">
+                @using (Html.BeginForm("UpdateProfile", "Home", FormMethod.Post))
+                {
+                    @Html.Hidden("UserId", Model.UserId)
+                    <div class="Validation" asp-validation-summary="ModelOnly"></div>
+                    <div class="blocks-position">
+                        <div class="block-position">
+                            <div class="block-position-lable">
+                                @Html.Label(null, "Фамилия")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="MiddleName"></span>
+                            </div>
+                            <div class="">
+                                @Html.TextBox("MiddleName", Model.Participant.MiddleName, new { @type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-position">
+                            <div class="block-position-lable">
+                                @Html.Label(null, "Фамилия")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                            <div class="">
+                                @Html.TextBox("Name", Model.Participant.Name, new { @type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-position">
+                            <div class="block-position-lable">
+                                @Html.Label(null, "Отчество")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="LastName"></span>
+                            </div>
+                            <div class="">
+                                @Html.TextBox("LastName", Model.Participant.LastName, new { @type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-position">
+                            <div class="block-position-lable">
+                                @Html.Label(null, "Дата рождения")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="DateAge"></span>
+                            </div>
+                            <div class="">
+                                @Html.TextBox("DateAge", Model.Participant.DateAge, new { @type = "date" })
+                            </div>
+                        </div>
+                        <div class="block-position">
+                            <div class="block-position-lable">
+                                @Html.Label(null, "Пол")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="SelectPol"></span>
+                            </div>
+                            <div class="">
+                                <select asp-for="PolId" asp-items="Model.SelectPol"></select>
+                            </div>
+                        </div>
+                        <div class="block-position">
+                            <div class="">
+                                @Html.Label(null, "Страна")
+                            </div>
+                            <div class="block-position-nav">
+                                <span asp-validation-for="SelectCountry"></span>
+                            </div>
+                            <div class="">
+                                <select asp-for="CountryId" asp-items="Model.SelectCountry"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-submit-update">
+                        <input type="submit" name="" value="Изменить">
+                    </div>
+                }
+            </div>
+    </div>
+</body>
+</html>
+
+

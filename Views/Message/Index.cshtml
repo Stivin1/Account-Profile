@@ -1,0 +1,203 @@
+﻿
+@model OpenSourceEntitys.Models.ModelControllers.ListMessage
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/font-awesome-4.7.0\css\font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/HomeFrontMenu.css">
+    <link rel="stylesheet" href="~/css/HomeMenu.css">
+    <link rel="stylesheet" href="~/css/Message.css">
+    <title></title>
+</head>
+<body>
+    <div class="list-navigation">
+        <nav>
+            <ul>
+                <li><i class="search-f fa fa-search" aria-hidden="true"><input type="text" name="" value=""></i></li>
+            </ul>
+            <ul class="pos">
+                <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-globe" aria-hidden="true"></i>Главная</a></li>
+                <li><a href="@Url.Action("ListUsersGroups","Group")"><i class="fa fa-users" aria-hidden="true"></i>Группы</a></li>
+                <li><a href="@Url.Action("Index", "Registration")"><i class="fa fa-user-plus" aria-hidden="true"></i>Регистрация</a></li>
+                <li><a href="@Url.Action("OutAccount", "Home",new { UserId = @Model.UserId })"><i class="fa fa-user" aria-hidden="true"></i>Выход</a></li>
+                <li><a href="@Url.Action("Index", "Front")"><i class="fa fa-map-o" aria-hidden="true"></i>О Сайте</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="base-container-home">
+        <div class="base-home-menu">
+            <nav class="">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")"><i class="fa fa-user-o" aria-hidden="true"></i>Профиль</a></li>
+                    <li><a href="@Url.Action("Index","ListUser",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список пользователей</a></li>
+                    <li><a href="@Url.Action("UpdateProfile","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные профиля</a></li>
+                    <li><a href="@Url.Action("UpdateAccount","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить данные пользователя</a></li>
+                    <li><a href="@Url.Action("UpdatePassword","Home",new { UserId = @Model.UserId })"><i class="fa fa-list-alt" aria-hidden="true"></i>Изменить пароль</a></li>
+                    <li><a href="@Url.Action("ListUsersGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Список групп</a></li>
+                    <li><a href="@Url.Action("AppendGroups","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу</a></li>
+                    <li><a href="@Url.Action("AppendGroupsAccount","Group",new { UserId = @Model.UserId })"><i class="fa fa-users" aria-hidden="true"></i>Добавить группу пользователю</a></li>
+                    <li><a href="@Url.Action("AppendRole","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить роль</a></li>
+                    <li><a href="@Url.Action("AppendRoleAccount","Role",new { UserId = @Model.UserId })"><i class="fa fa-id-card-o" aria-hidden="true"></i>Добавить пользователю роль</a></li>
+                    <li><a href="@Url.Action("Index","Document",new { UserId = @Model.UserId })"><i class="fa fa-file-o" aria-hidden="true"></i>Мои документы</a></li>
+                    <li><a href="@Url.Action("DocumentDeleted","Document",new { UserId = @Model.UserId })"><i class="fa fa-shopping-basket" aria-hidden="true"></i>Корзина документов</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageForUsers","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>Почта
+                            <div id="mail">@Model.HelpersDisplayCountMessage</div>
+                        </a>
+                    </li>
+                    <li><a href="@Url.Action("Index","Message",new { UserId = @Model.UserId })"><i class="fa fa-comment-o" aria-hidden="true"></i>Отправить сообщение</a></li>
+                    <li>
+                        <a href="@Url.Action("MessageDeleted","Message",new { UserId = @Model.UserId })">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>Удаленные сообщения
+                            <div id="mail">@Model.HelpersDeletedCountMessage</div>
+                        </a>
+                    </li>
+                   </ul>
+            </nav>
+        </div>
+        <div class="base-home-content">
+            <div class="base-home-content-information">
+                <div class="base-home-content-information-pos">
+                    <label for=""><i class="fa fa-comment-o" aria-hidden="true"></i>Почта</label>
+                </div>
+            </div>
+            <div class="container-search">
+                @using (Html.BeginForm("Index", "Message", FormMethod.Get))
+                {
+                    @Html.Hidden("UserId",Model.UserId)
+                    <div class="container-search-inputs">
+                        <div class="block-input">
+                            <div class="block-label-loc">
+                                @Html.Label("MiddleName", "Фамлия")
+                            </div>
+                            <div class="">
+                                @Html.TextBox("MiddleName", null, new { type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-input">
+                            <div class="block-label-loc">
+                                @Html.Label("Name", "Имя")
+                            </div>
+                            <div class="">
+                                @Html.TextBox("Name", null, new { type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-input">
+                            <div class="block-label-loc">
+                                @Html.Label("LastName", "Отчество")
+                            </div>
+                            <div class="">
+                                @Html.TextBox("LastName", null, new { type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-input">
+                            <div class="block-label-loc">
+                                @Html.Label("Email", "Почта")
+                            </div>
+                            <div class="">
+                                @Html.TextBox("Email", null, new { type = "text" })
+                            </div>
+                        </div>
+                        <div class="block-input">
+                            <div class="block-label-loc">
+                                @Html.Label("UserName", "Имя пользователя")
+                            </div>
+                            <div class="">
+                                @Html.TextBox("UserName", null, new { type = "text" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-input-sumbit">
+                        <input type="submit" name="" value="Найти">
+                    </div>
+                }
+            </div>
+            <div class="container-table-user-search">
+                <table>
+                    @{
+                        <tr class="container-table-user-search-main">
+                            <th>Фамлия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>Почта</th>
+                            <th>Имя пользователя</th>
+                            <th>Отправить сообщение</th>
+                        </tr>
+                        @foreach (var message in Model.Participants)
+                        {
+                            <tr class="container-table-user-search-list">
+                                <td>@message.MiddleName</td>
+                                <td>@message.Name</td>
+                                <td>@message.MiddleName</td>
+                                <td>@message.User.UserName</td>
+                                <td>@message.User.Email</td>
+                                <td><a id="openmessage" href="@Url.ActionLink("MessageSend","Message",
+                                                             new { UserSenderId = Model.UserId, UserRecipientId = message.UserId })">Отправить</a></td>
+                            </tr>
+                        }
+                    }
+                </table>
+                <ul class="pagination">
+                    @{
+                        <li>
+                            <a asp-route-page="@(Model.ListUserMessagePagination.CurrentPage > 0 ?  Model.ListUserMessagePagination.CurrentPage - 1 : 0)"
+                               asp-route-Sorting="@Model.ListUserMessageSorting.Default"
+                               asp-route-Middlename="@Model.MiddleName"
+                               asp-route-Name="@Model.Name"
+                               asp-route-LastName="@Model.LastName"
+                               asp-route-Email="@Model.Email"
+                               asp-route-UserId="@Model.UserId">«</a>
+                        </li>
+                        for (int i = 1; i < Model.ListUserMessagePagination.TotalPage + 1; i++)
+                        {
+                            if (Model.ListUserMessagePagination.After)
+                            {
+                                <li>
+                                    <a asp-route-page="@(@i)"
+                                       asp-route-Sorting="@Model.ListUserMessageSorting.Default"
+                                       asp-route-Middlename="@Model.MiddleName"
+                                       asp-route-Name="@Model.Name"
+                                       asp-route-LastName="@Model.LastName"
+                                       asp-route-Email="@Model.Email"
+                                       asp-route-UserId="@Model.UserId">@i</a>
+                                </li>
+                            }
+                            else
+                            if (Model.ListUserMessagePagination.Bofore)
+                            {
+                                <li>
+                                    <a asp-route-page="@(@i)"
+                                       asp-route-Sorting="@Model.ListUserMessageSorting.Default"
+                                       asp-route-Middlename="@Model.MiddleName"
+                                       asp-route-Name="@Model.Name"
+                                       asp-route-LastName="@Model.LastName"
+                                       asp-route-Email="@Model.Email"
+                                       asp-route-UserId="@Model.UserId">@i</a>
+                                </li>
+                            }
+                        }
+                        <li>
+                            <a asp-route-page="@(Model.ListUserMessagePagination.CurrentPage < Model.ListUserMessagePagination.TotalPage ?  Model.ListUserMessagePagination.CurrentPage + 1 : Model.ListUserMessagePagination.TotalPage)"
+                               asp-route-Sorting="@Model.ListUserMessageSorting.Default"
+                               asp-route-Middlename="@Model.MiddleName"
+                               asp-route-Name="@Model.Name"
+                               asp-route-LastName="@Model.LastName"
+                               asp-route-Email="@Model.Email"
+                               asp-route-UserId="@Model.UserId">»</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

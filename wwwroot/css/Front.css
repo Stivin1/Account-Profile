@@ -1,0 +1,136 @@
+
+.base-container{
+  min-height: 100%;
+  background-color: #17191C;
+}
+
+.location{
+  margin-top: 100px;
+  display: inline-flex;
+}
+
+.container-information{
+  width: 775px;
+  height: 700px;
+  margin-left: 27px;
+  background-color: black;
+  background-color: #202226;
+  border: 0.1px solid #333333;
+}
+
+.container-reg{
+  width: 775px;
+  height: 700px;
+  margin-left: 20px;
+  background-color: black;
+  background-color: #202226;
+  border: 0.1px solid #333333;
+}
+
+.information{
+  margin-top: 20px;
+}
+
+.information label{
+  font-size: 24px;
+  color: white;
+  margin-left: 50px;
+}
+
+
+.information-p{
+  display: block;
+}
+
+.information-p label{
+  color: white;
+}
+
+.information-p1{
+  display: block;
+  margin-top: 50px;
+  margin-left: 46px;
+}
+
+.information-p2{
+  display: block;
+  margin-top: 10px;
+  margin-left: 46px;
+}
+
+.container-lable-1{
+  margin-top: 100px;
+  margin-left: 100px;
+  padding-bottom: 5px;
+}
+
+.container-lable-1 label{
+  color: white;
+}
+
+.container-input-nav{
+  color: white;
+  width: 0px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.container-input-email{
+  margin-left: 100px;
+}
+
+.container-input-email > input{
+  outline: none;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 100px;
+  border-radius: 4px;
+  border-color: black;
+  width: 410px;
+}
+
+.container-input-email > input:hover{
+  cursor: pointer;
+}
+
+.container-submit-email{
+  margin-top: 10px;
+  margin-left: 102px;
+}
+
+.container-submit-email > input{
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #5C9A18;
+  border: 1px solid #5C9A18;
+  cursor: pointer;
+}
+
+.container-submit-email > input:Hover{
+  background-color: #66AB1B;
+  border: 1px solid #66AB1B;
+}
+
+/*
+.container-information{
+  width: 700px;
+  height: 700px;
+  margin-left: 50px;
+  background-color: #212327;
+  border-radius: 3px;
+  border: 0.1px solid #333333;
+  box-shadow: 5px 5px #111815;
+}
+
+.container-input-reg-email{
+  width: 700px;
+  height: 700px;
+  margin-left: 50px;
+  background-color: #212327;
+  border-radius: 3px;
+  border: 0.1px solid #333333;
+  box-shadow: 5px 5px #111815;
+}
+
+*/
